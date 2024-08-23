@@ -791,5 +791,6 @@ map('n', '<leader>h', '<Cmd>BufferPrevious<CR>', opts)
 
 -- Map leader + l to move to the next buffer
 map('n', '<leader>l', '<Cmd>BufferNext<CR>', opts)
+map('n', '<leader>cb', '<Cmd>BufferClose<CR>', opts)
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
