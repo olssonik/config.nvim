@@ -451,7 +451,8 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        -- tsserver = {},
+        --
         pylsp = {
           settings = {
             pylsp = {
@@ -786,14 +787,3 @@ require('lazy').setup({
     },
   },
 })
--- Key mappings for buffer navigation
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
--- Map leader + h to move to the previous buffer
-map('n', '<leader>h', '<Cmd>BufferPrevious<CR>', opts)
-
--- Map leader + l to move to the next buffer
-map('n', '<leader>l', '<Cmd>BufferNext<CR>', opts)
-map('n', '<leader>cb', '<Cmd>BufferClose<CR>', opts)
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
