@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons", "rebelot/kanagawa.nvim" },
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
@@ -9,7 +9,7 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = 'kanagawa-dragon',
+        theme = 'kanagawa',
       },
       sections = {
         lualine_x = {
