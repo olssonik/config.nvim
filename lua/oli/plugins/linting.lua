@@ -12,7 +12,7 @@ return {
 			python = { "flake8" },
       go = { "golangcilint" }, -- Go linter
 			c = { "clangd" },         -- C linter
-			cpp = { "clangd" },       -- C++ linter
+			cpp = { "cpplint" },       -- C++ linter
 			dockerfile = { "hadolint" } -- Docker linter
 		}
 
