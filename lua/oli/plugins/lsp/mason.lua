@@ -34,7 +34,6 @@ return {
         'emmet_ls',
         'pylsp',
         'gopls',
-        'golangci_lint_ls',
         'clangd',
         'jsonls',
         'dockerls',
@@ -53,6 +52,7 @@ return {
         'clang-format',
         'sqlfluff',
         'cpplint',
+        'golangci-lint',
       },
     }
   end,
