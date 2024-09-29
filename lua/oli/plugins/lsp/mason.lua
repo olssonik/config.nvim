@@ -55,6 +55,7 @@ return {
         'hadolint',
         'jsonlint',
         'markdownlint',
+        "quick-lint-js",
       },
     }
   end,
