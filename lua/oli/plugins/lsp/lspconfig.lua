@@ -85,6 +85,12 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["gopls"] = function() end,
+			["clangd"] = function() end, -- C/C++
+			["jsonls"] = function() end,
+			["dockerls"] = function() end,
+			["sqlls"] = function() end, -- SQL
+			["marksman"] = function() end, -- Markdown
 			["pylsp"] = function()
 				-- configure Python language server
 				lspconfig["pylsp"].setup({

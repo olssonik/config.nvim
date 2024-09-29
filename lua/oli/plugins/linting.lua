@@ -10,6 +10,10 @@ return {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
 			python = { "flake8" },
+      go = { "golangci-lint" }, -- Go linter
+			c = { "clangd" },         -- C linter
+			cpp = { "clangd" },       -- C++ linter
+			dockerfile = { "hadolint" } -- Docker linter
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

@@ -17,6 +17,11 @@ return {
         markdown = { 'prettier' },
         lua = { 'stylua' },
         python = { 'isort' },
+        go = { "gofmt" },          -- Go formatter
+				c = { "clang-format" },    -- C formatter
+				cpp = { "clang-format" },  -- C++ formatter
+				sql = { "sqlfluff" },      -- SQL formatter
+				dockerfile = { "prettier" } -- Docker formatter
       },
     }
 
