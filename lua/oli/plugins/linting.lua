@@ -13,7 +13,10 @@ return {
       go = { "golangcilint" }, -- Go linter
 			c = { "cpplint" },         -- C linter
 			cpp = { "cpplint" },       -- C++ linter
-			dockerfile = { "hadolint" } -- Docker linter
+			dockerfile = { "hadolint" }, -- Docker linter
+      json = {'jsonlint'},
+      sql = {'sqlfluff'},
+      markdown = {'markdownlint'},
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

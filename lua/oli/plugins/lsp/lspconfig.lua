@@ -92,10 +92,30 @@ return {
         }
       end,
       ['clangd'] = function() end, -- C/C++
-      ['jsonls'] = function() end,
-      ['dockerls'] = function() end,
-      ['sqlls'] = function() end, -- SQL
-      ['marksman'] = function() end, -- Markdown
+      ['jsonls'] = function()
+        lspconfig['jsonls'].setup {
+          capabilities = capabilities,
+          filetypes = { 'json' },
+        }
+      end,
+      ['dockerls'] = function()
+        lspconfig['dockerls'].setup {
+          capabilities = capabilities,
+          filetypes = { 'Dockerfile', 'docker-compose' },
+        }
+      end,
+      ['sqlls'] = function()
+        lspconfig['sqlls'].setup {
+          capabilities = capabilities,
+          filetypes = { 'sql' },
+        }
+      end, -- SQL
+      ['marksman'] = function()
+        lspconfig['marksman'].setup {
+          capabilities = capabilities,
+          filetypes = { 'md' },
+        }
+      end, -- Markdown
       ['pylsp'] = function()
         -- configure Python language server
         lspconfig['pylsp'].setup {

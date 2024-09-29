@@ -53,6 +53,9 @@ return {
         'sqlfluff',
         'cpplint',
         'golangci-lint',
+        'hadolint',
+        'jsonlint',
+        'markdownlint',
       },
     }
   end,
