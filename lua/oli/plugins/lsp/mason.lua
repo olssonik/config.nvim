@@ -52,6 +52,7 @@ return {
         'eslint_d',
         'clang-format',
         'sqlfluff',
+        'cpplint',
       },
     }
   end,
