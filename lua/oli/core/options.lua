@@ -7,7 +7,10 @@ opt.updatetime = 300
 opt.relativenumber = true
 opt.number = true
 
-vim.opt.scrolloff = 10
+opt.hlsearch = true
+
+opt.scrolloff = 10
+
 -- tabs & indentation
 
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)

@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 -- still gotta get used to it :<
 keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
