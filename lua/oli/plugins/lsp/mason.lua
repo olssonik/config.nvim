@@ -56,6 +56,7 @@ return {
         'jsonlint',
         'markdownlint',
         "quick-lint-js",
+        "black",
       },
     }
   end,

@@ -13,6 +13,7 @@ return {
     treesitter.setup({ -- enable syntax highlighting
       highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false, -- disable regex-based highlighting
       },
       -- enable indentation
       indent = { enable = true },
@@ -42,6 +43,7 @@ return {
         "query",
         "vimdoc",
         "c",
+        "python",
       },
       incremental_selection = {
         enable = true,

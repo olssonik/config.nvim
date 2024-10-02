@@ -16,7 +16,7 @@ return {
         yaml = { 'prettier' },
         markdown = { 'prettier' },
         lua = { 'stylua' },
-        python = { 'isort' },
+        python = { 'black' },
         go = { "gofmt" },          -- Go formatter
 				c = { "clang-format" },    -- C formatter
 				cpp = { "clang-format" },  -- C++ formatter
