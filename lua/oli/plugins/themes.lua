@@ -36,6 +36,21 @@ return {
           GitSignsAdd = { fg = theme.vcs.add, bg = theme.ui.bg },    -- Background for `+`
           GitSignsChange = { fg = theme.vcs.change, bg = theme.ui.bg }, -- Background for `~`
           GitSignsDelete = { fg = theme.vcs.delete, bg = theme.ui.bg }, -- Background for `-`
+
+          DiagnosticError = { fg = theme.diag.error, bg = theme.ui.bg },
+          DiagnosticWarn = { fg = theme.diag.warning, bg = theme.ui.bg },
+          DiagnosticInfo = { fg = theme.diag.info, bg = theme.ui.bg },
+          DiagnosticHint = { fg = theme.diag.hint, bg = theme.ui.bg },
+
+          DiagnosticSignError = { fg = theme.diag.error, bg = theme.ui.bg },
+          DiagnosticSignWarn = { fg = theme.diag.warning, bg = theme.ui.bg },
+          DiagnosticSignInfo = { fg = theme.diag.info, bg = theme.ui.bg },
+          DiagnosticSignHint = { fg = theme.diag.hint, bg = theme.ui.bg },
+
+          DiagnosticVirtualTextError = { fg = theme.diag.error, bg = theme.ui.bg },
+          DiagnosticVirtualTextWarn = { fg = theme.diag.warning, bg = theme.ui.bg },
+          DiagnosticVirtualTextInfo = { fg = theme.diag.info, bg = theme.ui.bg },
+          DiagnosticVirtualTextHint = { fg = theme.diag.hint, bg = theme.ui.bg },
         }
       end,
       theme = 'dragon', -- Set to "dragon" theme
