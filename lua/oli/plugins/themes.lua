@@ -30,6 +30,12 @@ return {
           PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
           PmenuSbar = { bg = theme.ui.bg_m1 },
           PmenuThumb = { bg = theme.ui.bg_p2 },
+          LineNr = { fg = '#606060', bg = theme.ui.bg },
+          CursorLineNr = { fg = theme.ui.special, bg = theme.ui.bg }, -- Current line number
+          SignColumn = { bg = theme.ui.bg },
+          GitSignsAdd = { fg = theme.vcs.add, bg = theme.ui.bg },    -- Background for `+`
+          GitSignsChange = { fg = theme.vcs.change, bg = theme.ui.bg }, -- Background for `~`
+          GitSignsDelete = { fg = theme.vcs.delete, bg = theme.ui.bg }, -- Background for `-`
         }
       end,
       theme = 'dragon', -- Set to "dragon" theme
