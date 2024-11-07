@@ -123,7 +123,6 @@ return {
           capabilities = capabilities,
           settings = {
             pylsp = {
-              -- Disable the line length warning (PEP 8)
               configurationSources = { 'flake8' },
               plugins = {
                 flake8 = { maxLineLength = 350 },
@@ -132,18 +131,10 @@ return {
           },
         }
       end,
-      ['emmet_ls'] = function()
-        -- configure emmet language server
-        lspconfig['emmet_ls'].setup {
+      ['ts_ls'] = function()
+        lspconfig['ts_ls'].setup {
           capabilities = capabilities,
-          filetypes = {
-            'html',
-            'typescriptreact',
-            'javascriptreact',
-            'css',
-            'sass',
-            'scss',
-          },
+          filetypes = {'javascript', 'typescript', 'javascriptreact', 'typescriptreact'}
         }
       end,
       ['lua_ls'] = function()

@@ -30,7 +30,6 @@ return {
         'html',
         'cssls',
         'lua_ls',
-        'emmet_ls',
         'pylsp',
         'gopls',
         'clangd',
@@ -38,6 +37,7 @@ return {
         'dockerls',
         'sqlls',
         'marksman',
+        'ts_ls',
       },
     }
 
@@ -47,7 +47,7 @@ return {
         'stylua',
         'isort',
         'flake8',
-        'eslint_d',
+        'biome',
         'clang-format',
         'sqlfluff',
         'cpplint',

@@ -3,13 +3,14 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local lint = require("lint")
+    local linters = require("lint").linters
 
 		lint.linters_by_ft = {
-			javascript = { "quick-lint-js" },
-			typescript = { "quick-lint-js" },
-			javascriptreact = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
-			python = { "flake8" },
+			javascript = { "biomejs" },
+			typescript = { "biomejs" },
+			javascriptreact = { "biomejs" },
+			typescriptreact = { "biomejs" },
+			python = {"flake8"},
       go = { "golangcilint" }, -- Go linter
 			c = { "cpplint" },         -- C linter
 			cpp = { "cpplint" },       -- C++ linter
@@ -18,6 +19,7 @@ return {
       sql = {'sqlfluff'},
       markdown = {'markdownlint'},
 		}
+    linters.flake8.args = {'--max-line-length=160',}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
