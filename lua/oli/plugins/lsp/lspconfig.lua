@@ -3,8 +3,8 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',
-     'folke/neodev.nvim',
-     'j-hui/fidget.nvim',
+    'folke/neodev.nvim',
+    'j-hui/fidget.nvim',
     { 'antosha417/nvim-lsp-file-operations', config = true },
   },
   config = function()
@@ -125,7 +125,20 @@ return {
             pylsp = {
               configurationSources = { 'flake8' },
               plugins = {
-                flake8 = { maxLineLength = 350 },
+                flake8 = {
+                  '.',
+                  '--max-line-length',
+                  '160',
+                  '--max-complexity',
+                  '10',
+                  '--extend-ignore',
+                  'E203',
+                  '--count',
+                  '--show-source',
+                  '--statistics',
+                  '--exclude',
+                  'venv*/',
+                },
               },
             },
           },
@@ -134,7 +147,7 @@ return {
       ['ts_ls'] = function()
         lspconfig['ts_ls'].setup {
           capabilities = capabilities,
-          filetypes = {'javascript', 'typescript', 'javascriptreact', 'typescriptreact'}
+          filetypes = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
         }
       end,
       ['lua_ls'] = function()

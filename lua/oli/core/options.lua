@@ -4,7 +4,7 @@ vim.o.showmode = false  -- Disable mode display (e.g., -- INSERT --)
 
 local opt = vim.opt
 
-opt.updatetime = 300
+opt.updatetime = 1000
 
 opt.relativenumber = true
 opt.number = true
