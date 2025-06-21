@@ -1,63 +1,75 @@
 return {
-  'williamboman/mason.nvim',
+  "williamboman/mason.nvim",
   dependencies = {
-    'williamboman/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-    -- import mason
-    local mason = require 'mason'
+    -- Import all the plugins we need here
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
+    local mason_tool_installer = require("mason-tool-installer")
+    local lspconfig = require("lspconfig")
+    local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-    -- import mason-lspconfig
-    local mason_lspconfig = require 'mason-lspconfig'
+    -- Get the lspconfig capabilities, which we'll pass to every server
+    local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    local mason_tool_installer = require 'mason-tool-installer'
-
-    -- enable mason and configure icons
-    mason.setup {
+    -- Setup mason itself
+    mason.setup({
       ui = {
         icons = {
-          package_installed = '✓',
-          package_pending = '➜',
-          package_uninstalled = '✗',
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
         },
       },
-    }
+    })
 
-    mason_lspconfig.setup {
-      -- list of servers for mason to install
-      ensure_installed = {
-        'html',
-        'cssls',
-        'lua_ls',
-        'pylsp',
-        'gopls',
-        'clangd',
-        'jsonls',
-        'dockerls',
-        'sqlls',
-        'marksman',
-        'ts_ls',
-      },
-    }
+    -- Setup mason-tool-installer to install formatters and linters
+    mason_tool_installer.setup({
+      ensure_installed = { "prettier", "stylua", "black", "isort", "flake8" },
+    })
 
-    mason_tool_installer.setup {
+    -- This is the new, unified setup for mason-lspconfig
+    mason_lspconfig.setup({
+      -- A list of LSPs to install automatically
       ensure_installed = {
-        'prettier',
-        'stylua',
-        'isort',
-        'flake8',
-        'biome',
-        'clang-format',
-        'sqlfluff',
-        'cpplint',
-        'golangci-lint',
-        'hadolint',
-        'jsonlint',
-        'markdownlint',
-        "quick-lint-js",
-        "black",
+        "pyright",
+        "lua_ls",
+        "cssls",
+        "html",
+        "gopls",
+        "jsonls",
+        "ts_ls",
       },
-    }
+      -- This handlers block configures lspconfig for each server
+      handlers = {
+        -- This is a default handler that will apply to all servers
+        -- that don't have a specific handler below.
+        function(server_name)
+          lspconfig[server_name].setup({
+            capabilities = capabilities,
+          })
+        end,
+
+        -- This is the custom handler for Pyright with our corrected settings.
+        ["pyright"] = function()
+          lspconfig.pyright.setup({
+            capabilities = capabilities,
+            settings = {
+              pyright = {
+                analysis = {
+                  -- This enables full project analysis
+                  diagnosticMode = "workspace",
+                  -- This enables strict type checking for errors like "None" is not assignable
+                  typeCheckingMode = "strict",
+                },
+              },
+            },
+          })
+        end,
+      },
+    })
   end,
 }

@@ -3,6 +3,16 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- lua/oli/core/keymaps.lua
+
+-- Open diagnostics in a list for the current buffer
+keymap.set('n', '<leader>dl', vim.diagnostic.open_float, { desc = '[D]iagnostic [L]ist' })
+
+-- Open all project diagnostics in the Quickfix list
+keymap.set('n', '<leader>dq', function()
+  vim.diagnostic.setqflist({ all = true })
+  vim.cmd('copen')
+end, { desc = '[D]iagnostics [Q]uickfix' })
 
 -- still gotta get used to it :<
 keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
