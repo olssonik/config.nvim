@@ -33,7 +33,7 @@ return {
           LineNr = { fg = '#606060', bg = theme.ui.bg },
           CursorLineNr = { fg = theme.ui.special, bg = theme.ui.bg }, -- Current line number
           SignColumn = { bg = theme.ui.bg },
-          GitSignsAdd = { fg = theme.vcs.add, bg = theme.ui.bg },    -- Background for `+`
+          GitSignsAdd = { fg = theme.vcs.add, bg = theme.ui.bg }, -- Background for `+`
           GitSignsChange = { fg = theme.vcs.change, bg = theme.ui.bg }, -- Background for `~`
           GitSignsDelete = { fg = theme.vcs.delete, bg = theme.ui.bg }, -- Background for `-`
 

@@ -21,8 +21,8 @@ return {
     -- Add your custom routes
     routes = {
       {
-        view = "notify",
-        filter = { event = "msg_showmode" },
+        view = 'notify',
+        filter = { event = 'msg_showmode' },
       },
     },
   },

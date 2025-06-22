@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 -- reload file if changed outside but buffer open
 vim.o.autoread = true
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "FocusGained", "VimResume" }, {
+vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter', 'FocusGained', 'VimResume' }, {
   command = "if mode() != 'c' | checktime | endif",
-  pattern = { "*" },
+  pattern = { '*' },
 })

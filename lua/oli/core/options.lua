@@ -1,6 +1,6 @@
 vim.g.netrw_liststyle = 3
 
-vim.o.showmode = false  -- Disable mode display (e.g., -- INSERT --)
+vim.o.showmode = false -- Disable mode display (e.g., -- INSERT --)
 
 local opt = vim.opt
 

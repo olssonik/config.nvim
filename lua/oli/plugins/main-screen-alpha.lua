@@ -8,7 +8,19 @@ return {
   config = function()
     local alpha = require 'alpha'
     local dashboard = require 'alpha.themes.dashboard'
+    local function get_commit_count()
+      local nvim_repo_path = os.getenv('HOME') .. '/.config/nvim'
 
+      local cmd = 'git -C ' .. nvim_repo_path .. ' rev-list --count HEAD'
+
+      local handle = io.popen(cmd)
+      if handle then
+        local result = handle:read('*a')
+        handle:close()
+        return result:gsub('%s*$', ''):gsub('^%s*', '')
+      end
+      return 'N/A' -- Return something if the command fails
+    end
     vim.api.nvim_set_hl(0, 'I2A0', { fg = '#70ef61' })
     vim.api.nvim_set_hl(0, 'I2A1', { fg = '#51212d' })
     vim.api.nvim_set_hl(0, 'I2A2', { fg = '#ff639b' })
@@ -617,8 +629,10 @@ return {
       [[ ⠀⠀⠀⠀⠘⠿⣿⣿⣿⣿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠎⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀ ]],
       [[ ⠀⠀⠀⠀⠀⠀⠙⠛⠛⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ]],
       [[ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ]],
-      [[                                          ]],
+      [[ 												]],
       [[CO JEŚLI PO ŚMIERCI BÓG SPYTA NAS JAK BYŁO W NIEBIE]],
+      [[]],
+      [[Times I had to fix neovim now: ]] .. get_commit_count(),
     }
 
     dashboard.section.buttons.type = 'group'

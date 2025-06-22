@@ -21,7 +21,7 @@ return {
       autotag = {
         enable = true,
       },
-      -- ensure these language parsers are installed
+
       ensure_installed = {
         "json",
         "javascript",
@@ -44,6 +44,28 @@ return {
         "vimdoc",
         "c",
         "python",
+        "go",
+
+        -- Config Files
+        "toml",
+        "jsonc",
+        "ini",
+
+        "rust",
+        "cpp",
+        "java",
+        "c_sharp",
+
+        "scss",
+        "vue",
+
+        "hcl",
+        "make",
+        "sql",
+        "git_rebase",
+
+        -- Special Highlight Parser
+        "comment",
       },
       incremental_selection = {
         enable = true,

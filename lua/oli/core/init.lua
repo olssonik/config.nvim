@@ -1,3 +1,3 @@
-require("oli.core.options")
-require("oli.core.keymaps")
-require("oli.core.auto-commands")
+require 'oli.core.options'
+require 'oli.core.keymaps'
+require 'oli.core.auto-commands'
