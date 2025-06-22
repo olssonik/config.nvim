@@ -39,7 +39,7 @@ return {
     -- Custom function to get the name of the active LSP server
     local function get_lsp_servername()
       local msg = 'No Active LSP'
-      local clients = vim.lsp.get_active_clients()
+      local clients = vim.lsp.get_clients()
       if next(clients) == nil then
         return msg
       end
