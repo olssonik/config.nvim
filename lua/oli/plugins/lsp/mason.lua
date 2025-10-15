@@ -79,6 +79,7 @@ return {
         'jsonls',
         'ts_ls',
         'rust_analyzer',
+        'omnisharp',
       },
       handlers = {
         -- This is the default handler that passes the on_attach function and capabilities
