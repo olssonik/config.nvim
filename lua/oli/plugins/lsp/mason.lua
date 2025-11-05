@@ -57,6 +57,7 @@ return {
 
         -- Linters
 
+        'checkmake',
         'flake8',
         'shellcheck',
         'yamllint',
